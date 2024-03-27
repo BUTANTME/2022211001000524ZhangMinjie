@@ -64,7 +64,9 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 按钮阴影 */
             transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 平滑过渡效果 */
         }
-
+        ul{
+            list-style: none;
+        }
         #submit:hover {
             background: #0056b3;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 鼠标悬停时增强按钮阴影效果 */
@@ -73,10 +75,10 @@
 </head>
 <body>
 <div id="container1">
-    <form id="register">
+    <form id="register" action="/2022211001000524ZhangMinjie_war_exploded/Register" method="post">
         <div class="r-input">
-            <label  >Name</label><br>
-            <input Type="text" ><br>
+            <label  >Username</label><br>
+            <input Type="text" name="username"><br>
         </div>
         <div class="r-input">
             <label >Password</label><br>
@@ -85,7 +87,7 @@
         </div>
         <div class="r-input">
             <label >Email</label><br>
-            <input Type="text"><br>
+            <input Type="text" name="email"><br>
 
         </div>
         <div class="r-gender">
@@ -102,7 +104,7 @@
         </div>
         <div class="r-input">
             <label>Brithday</label><br>
-            <input Type="text" id="brithday" placeholder="dd/mm/yyyy" required>
+            <input Type="text" id="brithday" name="brithday" placeholder="dd/mm/yyyy" required>
         </div>
 
     </form>
