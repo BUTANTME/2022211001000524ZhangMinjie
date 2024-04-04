@@ -84,7 +84,7 @@ public class RegisterServlet extends HttpServlet {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        request.setAttribute("list",list);
-        request.getRequestDispatcher("/user.jsp").forward(request,response);
+        //request.setAttribute("list",list);
+        request.getRequestDispatcher("/login.jsp").forward(request,response);
     }
 }

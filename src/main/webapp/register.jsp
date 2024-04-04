@@ -10,15 +10,17 @@
             margin: 0;
             box-sizing: border-box;
         }
-        body {
+
+        .container1 {
+            width:100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 80vh;
             background: linear-gradient(to right, #ff7e5f, #feb47b); /* 渐变背景 */
         }
 
-        #container1 {
+        #container2 {
             width: 300px;
             background: #fff;
             padding: 20px;
@@ -27,7 +29,7 @@
             transition: box-shadow 0.3s ease; /* 平滑过渡效果 */
         }
 
-        #container1:hover {
+        #container2:hover {
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* 鼠标悬停时增强阴影效果 */
         }
 
@@ -74,41 +76,46 @@
     </style>
 </head>
 <body>
-<div id="container1">
-    <form id="register" action="/2022211001000524ZhangMinjie_war_exploded/Register" method="post">
-        <div class="r-input">
-            <label  >Username</label><br>
-            <input Type="text" name="username"><br>
-        </div>
-        <div class="r-input">
-            <label >Password</label><br>
-            <input Type="password" minlength="8"  name="password" ><br>
-            <span id="p-limit">Password must larger than 8 characters</span>
-        </div>
-        <div class="r-input">
-            <label >Email</label><br>
-            <input Type="text" name="email"><br>
-
-        </div>
-        <div class="r-gender">
-            <label>Gender</label><br>
-            <ul >
-
-                <li><input  type="radio" value="male" name="gender" checked="true" ><label>male</label></li>
-                <li><input  type="radio"  value="female" name="gender"/><label>female</label></li>
-            </ul>
-
-        </div>
-        <div class="r-input">
-            <input Type="submit" id="submit" value="register"><br>
-        </div>
-        <div class="r-input">
-            <label>Brithday</label><br>
-            <input Type="text" id="brithday" name="brithday" placeholder="dd/mm/yyyy" required>
-        </div>
-
-    </form>
+<div>
+    <%@include file="header.jsp"%>
 </div>
+<div class="container1">
+    <div id="container2">
+        <form id="register" action="/2022211001000524ZhangMinjie_war_exploded/Register" method="post">
+            <div class="r-input">
+                <label >Username</label><br>
+                <input Type="text" name="username"><br>
+            </div>
+            <div class="r-input">
+                <label >Password</label><br>
+                <input Type="password" minlength="8"  name="password" ><br>
+                <span id="p-limit">Password must larger than 8 characters</span>
+            </div>
+            <div class="r-input">
+                <label >Email</label><br>
+                <input Type="text" name="email"><br>
 
-</body>
+            </div>
+            <div class="r-gender">
+                <label>Gender</label><br>
+                <ul >
+                    <li><input  type="radio" value="male" name="gender" checked="true" ><label>male</label></li>
+                    <li><input  type="radio"  value="female" name="gender"/><label>female</label></li>
+                </ul>
+
+            </div>
+            <div class="r-input">
+                <input Type="submit" id="submit" value="register"><br>
+            </div>
+            <div class="r-input">
+                <label>Brithday</label><br>
+                <input Type="text" id="brithday" name="brithday" placeholder="dd/mm/yyyy" required>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <%@include file="footer.jsp"%>
+</div>
+</body>>
 </html>
