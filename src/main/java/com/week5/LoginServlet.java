@@ -72,20 +72,15 @@ public class LoginServlet<user> extends HttpServlet {
             PrintWriter writer = response.getWriter();
 
             if(rs.next()){
-              /*writer.println("<html><body>");
-              writer.println("<h1>Login Success!!!</h1>");
-              writer.println("<h2>Welcome:<h2>"+username);
-              writer.println("</body></html>");*/
+
                 request.setAttribute("list",list);
                 request.getRequestDispatcher("user.jsp").forward(request,response);
             }
             else{
                 response.sendRedirect("login.jsp");
-             /* writer.println("<html><body>");
-              writer.println("<h1>Login Error!!!</h1>");
-              writer.println("</body></html>");*/
+
             }
-            //writer.close();
+
         }catch(SQLException e){
             e.printStackTrace();
         }
