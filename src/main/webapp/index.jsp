@@ -6,8 +6,9 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
-<h1><%= "Hello World!" %>
+<h1><%= "Welcome to my page" %>
 </h1>
+<!--
 <br/>
 <a href="hello-servlet">Hello Servlet-week1</a>
 <br/>
@@ -23,7 +24,17 @@
 <br/>
 <a href="login.jsp">Login week5</a>
 <a href="hello-servlet">Hello Servlet</a>
+-->
 
+<form method="get" target="_blank" action="search">
+    <input tyoe="text" name="txt" size="30">
+    <select name="search">
+        <option value="baidu">baidu</option>
+        <option value="bing">bing</option>
+        <option value="google">google</option>
+    </select>
+    <input type="submit" value="search" >
+</form>
 <%@include file="footer.jsp"%>
 </body>
 </html>

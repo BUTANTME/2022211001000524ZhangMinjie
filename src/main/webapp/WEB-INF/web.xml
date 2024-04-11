@@ -6,7 +6,7 @@
     <!--
         <servlet>
             <servlet-name>RegisterServlet</servlet-name>
-            <servlet-class>Week4homework.RegisterServlet</servlet-class>
+            <servlet-class>RegisterServlet</servlet-class>
         </servlet>
         <servlet-mapping>
             <servlet-name>RegisterServlet</servlet-name>
@@ -16,7 +16,7 @@
 
         <servlet>
             <servlet-name>Config</servlet-name>
-            <servlet-class>Week4homework.ConfigServlet</servlet-class>
+            <servlet-class>ConfigServlet</servlet-class>
 
             <init-param>
                 <param-name>name</param-name>

@@ -1,4 +1,4 @@
-package Week4homework;
+package com.week4;
 
 public class User {
     private String username;

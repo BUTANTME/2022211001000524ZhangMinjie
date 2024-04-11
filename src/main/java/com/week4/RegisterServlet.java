@@ -1,4 +1,4 @@
-package Week4homework;
+package com.week4;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -66,25 +65,6 @@ public class RegisterServlet extends HttpServlet {
         }catch(SQLException e){
             e.printStackTrace();
         }
-        //Print out!
-        ArrayList<Week4homework.User> list = new ArrayList<>();
-        String sql2 = "Select * from tb_user";
-        try{
-            Statement statement = con.createStatement();
-            ResultSet result = statement.executeQuery(sql2);
-            while(result.next()){
-                String Username = result.getString("username");
-                String Password =result.getString("password");
-                String Gender = result.getString("gender");
-                String Email = result.getString("email");
-                String Brithday =  result.getString("brithday");
-                Week4homework.User user = new User(Username,Password,Gender,Email,Brithday);
-                list.add(user);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        //request.setAttribute("list",list);
-        request.getRequestDispatcher("/login.jsp").forward(request,response);
+        response.sendRedirect("login.jsp");
     }
 }

@@ -1,4 +1,4 @@
-<%@ page import="Week4homework.User" %>
+<%@ page import="com.week4.User" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 24825
