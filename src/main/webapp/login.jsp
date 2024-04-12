@@ -69,6 +69,10 @@
 <div>
     <%@include file="header.jsp"%>
 </div>
+<%
+    if(!(request.getAttribute("message")==null)){
+        out.print("<h3>"+request.getAttribute("message")+"</h3>");
+    }%>
 <div class="container">
     <form action="/2022211001000524ZhangMinjie_war_exploded/login" class="login" method="post">
         <h1>login登录</h1>

@@ -44,24 +44,6 @@ public class LoginServlet<user> extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        ArrayList<User> list = new ArrayList<>();
-        String sql2 = "Select * from tb_user";
-        try{
-            Statement statement = con.createStatement();
-            ResultSet result = statement.executeQuery(sql2);
-            while(result.next()){
-                String Username = result.getString("username");
-                String Password =result.getString("password");
-                String Gender = result.getString("gender");
-                String Email = result.getString("email");
-                String Brithdate =  result.getString("brithdate");
-                User User = new User(Username,Password,Gender,Email,Brithdate);
-                list.add(User);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-
 
         try{
             String sql ="Select * from tb_user where username = ? "+"and password = ?";
@@ -72,12 +54,16 @@ public class LoginServlet<user> extends HttpServlet {
             PrintWriter writer = response.getWriter();
 
             if(rs.next()){
-
-                request.setAttribute("list",list);
-                request.getRequestDispatcher("user.jsp").forward(request,response);
+                request.setAttribute("username",rs.getString("username"));
+                request.setAttribute("password",rs.getString("password"));
+                request.setAttribute("email",rs.getString("email"));
+                request.setAttribute("gender",rs.getString("gender"));
+                request.setAttribute("brithdate",rs.getString("brithdate"));
+                request.getRequestDispatcher("userInfo.jsp").forward(request,response);
             }
             else{
-                response.sendRedirect("login.jsp");
+                request.setAttribute("message","username or password error!!");
+                request.getRequestDispatcher("login.jsp").forward(request,response);
 
             }
 
